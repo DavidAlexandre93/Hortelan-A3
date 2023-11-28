@@ -7,7 +7,7 @@ const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
 
 const navConfig = [
   {
-    title: 'IOT and multilingual websites',
+    title: 'page information',
     path: '/iot-presentation',
     icon: getIcon('eva:file-text-fill'),
   },
@@ -20,11 +20,6 @@ const navConfig = [
     title: 'garden',
     path: '/dashboard/user',
     icon: getIcon('eva:people-fill'),
-  },
-  {
-    title: 'Page for Error Usage',
-    path: '/404',
-    icon: getIcon('eva:alert-triangle-fill'),
   },
   {
     title: 'members',

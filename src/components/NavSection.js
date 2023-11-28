@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink as RouterLink, matchPath, useLocation } from 'react-router-dom';
-// material
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, List, Collapse, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
-//
+import { alpha, useTheme, styled, Box, List, ListItemText, ListItemIcon, ListItemButton, Modal, Typography, Collapse } from '@mui/material';
 import Iconify from './Iconify';
-
-// ----------------------------------------------------------------------
 
 const ListItemStyle = styled((props) => <ListItemButton disableGutters {...props} />)(({ theme }) => ({
   ...theme.typography.body2,
@@ -27,8 +22,6 @@ const ListItemIconStyle = styled(ListItemIcon)({
   justifyContent: 'center',
 });
 
-// ----------------------------------------------------------------------
-
 NavItem.propTypes = {
   item: PropTypes.object,
   active: PropTypes.func,
@@ -36,15 +29,16 @@ NavItem.propTypes = {
 
 function NavItem({ item, active }) {
   const theme = useTheme();
-
-  const isActiveRoot = active(item.path);
-
   const { title, path, icon, info, children } = item;
+  const isActiveRoot = active(path);
+  const [openModal, setOpenModal] = useState(false);
 
-  const [open, setOpen] = useState(isActiveRoot);
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
 
-  const handleOpen = () => {
-    setOpen((prev) => !prev);
+  const handleCloseModal = () => {
+    setOpenModal(false);
   };
 
   const activeRootStyle = {
@@ -53,16 +47,11 @@ function NavItem({ item, active }) {
     bgcolor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
   };
 
-  const activeSubStyle = {
-    color: 'text.primary',
-    fontWeight: 'fontWeightMedium',
-  };
-
   if (children) {
     return (
       <>
         <ListItemStyle
-          onClick={handleOpen}
+          onClick={handleOpenModal}
           sx={{
             ...(isActiveRoot && activeRootStyle),
           }}
@@ -71,51 +60,44 @@ function NavItem({ item, active }) {
           <ListItemText disableTypography primary={title} />
           {info && info}
           <Iconify
-            icon={open ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
+            icon={openModal ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
             sx={{ width: 16, height: 16, ml: 1 }}
           />
         </ListItemStyle>
 
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            {children.map((item) => {
-              const { title, path } = item;
-              const isActiveSub = active(path);
+        {/* Modal for "page information" */}
+        <Modal open={openModal} onClose={handleCloseModal}>
+          <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
+            <Typography variant="h6" component="h2">
+              {title}
+            </Typography>
+            {/* Add additional content for the modal if needed */}
+          </Box>
+        </Modal>
 
-              return (
+        {/* Render nested items */}
+        {openModal && (
+          <Collapse in={openModal} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {children.map((item) => (
                 <ListItemStyle
-                  key={title}
+                  key={item.title}
                   component={RouterLink}
-                  to={path}
+                  to={item.path}
                   sx={{
-                    ...(isActiveSub && activeSubStyle),
+                    ...(active(item.path) && {
+                      color: 'text.primary',
+                      fontWeight: 'fontWeightMedium',
+                    }),
                   }}
                 >
-                  <ListItemIconStyle>
-                    <Box
-                      component="span"
-                      sx={{
-                        width: 4,
-                        height: 4,
-                        display: 'flex',
-                        borderRadius: '50%',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        bgcolor: 'text.disabled',
-                        transition: (theme) => theme.transitions.create('transform'),
-                        ...(isActiveSub && {
-                          transform: 'scale(2)',
-                          bgcolor: 'primary.main',
-                        }),
-                      }}
-                    />
-                  </ListItemIconStyle>
-                  <ListItemText disableTypography primary={title} />
+                  <ListItemIconStyle>{item.icon && item.icon}</ListItemIconStyle>
+                  <ListItemText disableTypography primary={item.title} />
                 </ListItemStyle>
-              );
-            })}
-          </List>
-        </Collapse>
+              ))}
+            </List>
+          </Collapse>
+        )}
       </>
     );
   }

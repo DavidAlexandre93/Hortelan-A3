@@ -12,6 +12,7 @@ import useResponsive from '../../hooks/useResponsive';
 import Logo from '../../components/Logo';
 import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
+import Chatbot from 'src/components/chatbot/chatbot';
 //
 import navConfig from './NavConfig';
 
@@ -84,8 +85,11 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
       <Box sx={{ flexGrow: 1 }} />
 
-      <Box sx={{ px: 2.5, pb: 3, mt: 10 }}>
+
+      <Box sx={{ px: 2.5, pb: 40 }}>
         <Stack alignItems="center" spacing={3} sx={{ pt: 5, borderRadius: 2, position: 'relative' }}>
+
+         
           <Box
             component="img"
             src="/static/illustrations/illustration_avatar.png"
@@ -96,16 +100,12 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             <Typography gutterBottom variant="h6">
               Have some Questions or Problems?
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Ask your questions here through our chatbot, we recommend documentation or support requests
-            </Typography>
           </Box>
 
-          <Button href="https://www.davidalexandrefernandes.com.br" target="_blank" variant="contained">
-            Contact us
-          </Button>
+          <Chatbot />
+          
         </Stack>
-      </Box>
+      </Box> 
     </Scrollbar>
   );
 
