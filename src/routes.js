@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
@@ -9,7 +8,7 @@ import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import Members from './pages/Members';
 import Iot from './pages/Iot';
-import { Modal, Box, Button, Backdrop, Fade } from '@mui/material';
+import { Box } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -25,15 +24,7 @@ const style = {
   p: 4,
 };
 
-
 export default function Router() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const openModal = () => {
-    handleOpen();
-  };
 
   return useRoutes([
     {
@@ -51,27 +42,13 @@ export default function Router() {
       path: '/iot-presentation',
       element: (
         <>
-          <Button onClick={openModal}/>
-
-          <Modal
-            aria-labelledby="transition-modal-title"
-            aria-describedby="transition-modal-description"
-            open={open}
-            onClose={handleClose}
-            closeAfterTransition
-            slots={{ backdrop: Backdrop }}
-            slotProps={{
-              backdrop: {
-                timeout: 500,
-              },
-            }}
-        >   
-          <Fade in={open}>
+       
+    
             <Box sx={style}>
               <Iot />
             </Box>
-          </Fade>
-          </Modal>
+       
+         
         </>
       ),
     },
