@@ -86,7 +86,7 @@ export default function Iot() {
                         textAlign='center'
                         marginBottom='30px'
                     >
-                        A Internet of Things (IoT), ou Internet das Coisas em português, refere-se à interconexão de dispositivos físicos através da internet, permitindo que eles coletem e compartilhem dados. Esses dispositivos podem incluir uma variedade de objetos do cotidiano, como eletrodomésticos, veículos, sensores ambientais, dispositivos de saúde, entre outros. A ideia central do IoT é permitir que esses dispositivos se comuniquem e cooperem entre si para realizar tarefas específicas, coletar dados e oferecer serviços mais inteligentes e eficientes.
+                        The Internet of Things (IoT), or Internet of Things in Portuguese, refers to the interconnection of physical devices via the internet, allowing them to collect and share data. These devices can include a variety of everyday objects, such as household appliances, vehicles, environmental sensors, health devices, among others. The central idea of ​​IoT is to allow these devices to communicate and cooperate with each other to perform specific tasks, collect data and offer smarter and more efficient services.
                     </Typography>
                     <Grid
                         container
@@ -124,10 +124,10 @@ export default function Iot() {
                         direction='column'
                     >
                         <Typography variant="h3" gutterBottom>
-                            Como funciona
+                            How it works
                         </Typography>
                         <Typography variant="span" gutterBottom>
-                            Um típico sistema de IoT funciona por meio da coleta e troca de dados em tempo real. Um sistema IoT tem três componentes:
+                            A typical IoT system works by collecting and exchanging data in real time. An IoT system has three components:
                         </Typography>
                         <Grid
                             container
@@ -140,10 +140,10 @@ export default function Iot() {
                                 gap='10px'
                             >
                                 <Typography variant="h5">
-                                    Dispositivos inteligentes
+                                    Smart Devices
                                 </Typography>
                                 <Typography variant="p">
-                                    Este é um dispositivo, como uma televisão, uma câmera de segurança ou um equipamento de exercício que recebeu recursos de computação. Ele coleta dados de seu ambiente, entradas do usuário ou padrões de uso e comunica dados pela Internet de e para sua aplicação de IoT.
+                                    This is a device, such as a television, security camera, or exercise equipment that has been given computing capabilities. It collects data from your environment, user inputs, or usage patterns and communicates data over the Internet to and from your IoT application.
                                 </Typography>
                             </Grid>
                             <Grid
@@ -152,10 +152,10 @@ export default function Iot() {
                                 gap='10px'
                             >
                                 <Typography variant="h5">
-                                    Aplicação de IoT:
+                                  IoT Application:
                                 </Typography>
                                 <Typography variant="p">
-                                    Uma aplicação de IoT é um conjunto de serviços e software que integra dados recebidos de vários dispositivos de IoT. Ela utiliza tecnologia de machine learning ou inteligência artificial (IA) para analisar esses dados e tomar decisões informadas. Essas decisões são comunicadas de volta ao dispositivo de IoT e esse dispositivo responde de forma inteligente às entradas.
+                                  An IoT application is a set of services and software that integrates data received from multiple IoT devices. It uses machine learning or artificial intelligence (AI) technology to analyze this data and make informed decisions. These decisions are communicated back to the IoT device and that device responds intelligently to the inputs.
                                 </Typography>
                             </Grid>
                             <Grid
@@ -164,19 +164,19 @@ export default function Iot() {
                                 gap='10px'
                             >
                                 <Typography variant="h5">
-                                    Uma interface gráfica do usuário
+                                   A graphical user interface
                                 </Typography>
                                 <Typography variant="p">
-                                    O dispositivo de IoT ou a frota de dispositivos podem ser gerenciados por meio de uma interface gráfica do usuário. Exemplos comuns incluem uma aplicação móvel ou site que pode ser usado para registrar e controlar dispositivos inteligentes.
+                                   The IoT device or fleet of devices can be managed through a graphical user interface. Common examples include a mobile application or website that can be used to register and control smart devices.
                                 </Typography>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <img src={IotImg} />
+                    <img src={IotImg} alt='iotImg'/>
 
                     <Box>
                         <Typography variant="h3" marginBottom='30px'>
-                            Onde pode ser utilizada ?
+                             Where can it be used?
                         </Typography>
                         <Grid container spacing={3} >
                             <Grid
@@ -186,10 +186,10 @@ export default function Iot() {
                                 gap='20px'
                             >
                                 <Typography item variant="h4">
-                                    Casas Inteligentes
+                                    Smart Homes
                                 </Typography>
                                 <Typography item variant="span">
-                                    A Internet das Coisas (IoT) transforma casas em ambientes conectados, permitindo o controle remoto de dispositivos como termostatos, iluminação e fechaduras. Isso proporciona automação residencial para maior eficiência e comodidade. Sistemas de segurança conectados, como câmeras e sensores, melhoram a proteção residencial, e assistentes virtuais controlados por voz simplificam a interação.
+                                    The Internet of Things (IoT) transforms homes into connected environments, allowing remote control of devices such as thermostats, lighting and locks. This provides home automation for greater efficiency and convenience. Connected security systems like cameras and sensors improve home protection, and voice-controlled virtual assistants simplify interaction.
                                 </Typography>
                             </Grid>
                             <Grid
@@ -199,10 +199,10 @@ export default function Iot() {
                                 gap='20px'
                             >
                                 <Typography item variant="h4">
-                                    Saúde
+                                    Health
                                 </Typography>
                                 <Typography item variant="span">
-                                    Na área da saúde, dispositivos IoT monitoram condições médicas em tempo real, permitindo o acompanhamento remoto de pacientes. Wearables coletam dados sobre atividade física e saúde, enquanto dispositivos facilitam a gestão de medicamentos. A telemedicina oferece consultas remotas, proporcionando maior acessibilidade aos cuidados de saúde.
+                                    In healthcare, IoT devices monitor medical conditions in real time, allowing remote monitoring of patients. Wearables collect data on physical activity and health, while devices facilitate medication management. Telemedicine offers remote consultations, providing greater accessibility to healthcare.
                                 </Typography>
                             </Grid>
                             <Grid
@@ -212,10 +212,10 @@ export default function Iot() {
                                 gap='20px'
                             >
                                 <Typography item variant="h4">
-                                    Segurança
+                                   Security
                                 </Typography>
                                 <Typography item variant="span">
-                                    A IoT aprimora a segurança urbana com câmeras, sensores e dispositivos de rastreamento. Sensores detectam perigos como vazamentos de gás, contribuindo para a prevenção de acidentes. Em gestão de tráfego, sensores otimizam a sincronização de semáforos. A aplicação da IoT em diferentes contextos melhora a segurança, prevenção de acidentes e eficiência operacional.
+                                   IoT enhances urban security with cameras, sensors and tracking devices. Sensors detect dangers such as gas leaks, contributing to the prevention of accidents. In traffic management, sensors optimize traffic light synchronization. The application of IoT in different contexts improves safety, accident prevention and operational efficiency.
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -243,11 +243,11 @@ export default function Iot() {
                                 marginTop='30px'
                                 marginBottom='40px'
                             >
-                                Sites Multilíngues: Tornando o Conteúdo Globalmente Acessível
+                             Multilingual Websites: Making Content Globally Accessible
                             </Typography>
                         </Grid>
                         <Typography variant="p" color='white'>
-                            À medida que a internet encurta distâncias e conecta pessoas em todo o mundo, a necessidade de sites multilíngues se torna cada vez mais evidente. Essas plataformas online são projetadas para oferecer conteúdo em mais de um idioma, reconhecendo a diversidade linguística e cultural de sua audiência global. A seguir, exploramos em detalhes os elementos essenciais e considerações envolvidos na criação e manutenção de sites multilíngues.
+                             As the internet shortens distances and connects people around the world, the need for multilingual websites becomes increasingly evident. These online platforms are designed to offer content in more than one language, recognizing the linguistic and cultural diversity of their global audience. Below, we explore in detail the essential elements and considerations involved in creating and maintaining multilingual websites.
                         </Typography>
                     </Grid>
                     <Grid
@@ -256,7 +256,7 @@ export default function Iot() {
                         gap='40px'
                     >
                         <Grid item xs={4}>
-                            <img src={SecondMultilingue} />
+                            <img src={SecondMultilingue} alt='Secondmultilingue' />
                         </Grid>
                         <Grid
                             item
@@ -271,14 +271,14 @@ export default function Iot() {
                                     variant="h5"
                                     color='white'
                                 >
-                                    Conteúdo Multilíngue
+                                    Multilingual Content
                                 </Typography>
                                 <Typography
                                     item
                                     variant="p"
                                     color='white'
                                 >
-                                    Um dos princípios fundamentais de um site multilíngue é a apresentação do mesmo conteúdo em diferentes idiomas. Isso abrange não apenas o texto, mas também elementos visuais, como imagens e vídeos, garantindo uma experiência consistente para usuários de diversas origens linguísticas.
+                                    One of the fundamental principles of a multilingual website is the presentation of the same content in different languages. This encompasses not just text but also visual elements such as images and videos, ensuring a consistent experience for users of diverse linguistic backgrounds.
                                 </Typography>
                             </Grid>
                             <Grid container gap='10px'>
@@ -287,14 +287,14 @@ export default function Iot() {
                                     variant="h5"
                                     color='white'
                                 >
-                                    Navegação e Usabilidade
+                                    Navigation and Usability
                                 </Typography>
                                 <Typography
                                     item
                                     variant="p"
                                     color='white'
                                 >
-                                    A acessibilidade ao conteúdo em diferentes idiomas é essencial. Sites multilíngues frequentemente incluem seletor de idiomas visíveis na página inicial ou em locais estratégicos para permitir que os visitantes escolham sua preferência linguística de maneira intuitiva.
+                                    Accessibility to content in different languages ​​is essential. Multilingual websites often include language selectors visible on the home page or in strategic locations to allow visitors to choose their language preference intuitively.
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -318,14 +318,14 @@ export default function Iot() {
                                     variant="h5"
                                     color='white'
                                 >
-                                    Tradução Automática e Manual
+                                    Automatic and Manual Translation
                                 </Typography>
                                 <Typography
                                     item
                                     variant="p"
                                     color='white'
                                 >
-                                    Embora ferramentas de tradução automática possam oferecer uma abordagem inicial para disponibilizar conteúdo em vários idiomas, muitos sites optam pela tradução manual. Isso garante uma tradução mais precisa e leva em consideração nuances culturais que a automação pode negligenciar.
+                                    While machine translation tools can offer an initial approach to making content available in multiple languages, many websites opt for manual translation. This ensures a more accurate translation and takes into account cultural nuances that automation may overlook.
                                 </Typography>
                             </Grid>
                             <Grid container gap='10px'>
@@ -334,32 +334,32 @@ export default function Iot() {
                                     variant="h5"
                                     color='white'
                                 >
-                                    Direcionamento Geográfico
+                                    Geographic Targeting
                                 </Typography>
                                 <Typography
                                     item
                                     variant="p"
                                     color='white'
                                 >
-                                    Alguns sites implementam o redirecionamento geográfico para direcionar automaticamente os visitantes para a versão do site no idioma correspondente ao local de origem do IP. Isso aprimora a experiência do usuário, proporcionando uma entrada mais personalizada.
+                                    Some websites implement geo-redirection to automatically direct visitors to the language version of the website corresponding to where the IP originates. This enhances the user experience by providing more personalized input.
                                 </Typography>
                             </Grid>
                         </Grid>
                         <Grid item xs={4}>
-                            <img src={FirstMultilingue} />
+                            <img src={FirstMultilingue} alt='firstMultilingue'/>
                         </Grid>
                     </Grid>
 
                     <Grid container gap='20px'>
                         <Typography variant='h3' color='white' >
-                            Conclusão
+                           Conclusion
                         </Typography>
                         <Typography variant='p' color='white'>
-                            a criação de sites multilíngues é um esforço para tornar o conteúdo acessível em escala global, superando barreiras linguísticas e proporcionando experiências online mais inclusivas e personalizadas. Ao abordar cuidadosamente todos esses aspectos, os criadores de sites podem construir plataformas que transcendem fronteiras e conectam efetivamente pessoas de diferentes partes do mundo.
+                           Creating multilingual websites is an effort to make content accessible on a global scale, overcoming language barriers and providing more inclusive and personalized online experiences. By carefully addressing all these aspects, website creators can build platforms that transcend borders and effectively connect people from different parts of the world.
                         </Typography>
                         <StyledButton variant='outlined'>
                             <RouterLink to='/dashboard/app'>
-                                Go to Dashboard
+                              Return to home page
                             </RouterLink>
                         </StyledButton>
                     </Grid>
