@@ -11,6 +11,7 @@ import SecondMultilingue from 'src/assets/multilingual_2.jpg'
 
 // ----------------------------------------------------------------------
 
+
 const ContainerColor = {
     Primary: 'background: #202020',
     Secondary: 'background: #FFFFFF'
@@ -40,6 +41,7 @@ const StyledButton = styled(Button)(() => ({
 
 export default function Iot() {
     return (
+
         <Page title="Iot" >
             <Container maxWidth='100% !important' sx={ContainerColor.Primary} >
                 <Stack
@@ -59,7 +61,7 @@ export default function Iot() {
                         justifyContent="center"
                         marginBottom='80px'
                     >
-                        <img src={NavLogo} style={{ maxWidth: '50px' }} />
+                        <img src={NavLogo} alt="Hortelan Nav Logo" style={{ maxWidth: '50px' }} />
                         <Typography
                             variant="span"
                             color='#229A16'
@@ -367,7 +369,7 @@ export default function Iot() {
                         alignItems="center"
                         justifyContent="center"
                     >
-                        <img src={NavLogo} style={{ maxWidth: '50px' }} />
+                        <img src={NavLogo} alt="Hortelan Nav Logo" style={{ maxWidth: '50px' }} />
                         <Typography
                             variant="span"
                             color='#229A16'
@@ -379,5 +381,6 @@ export default function Iot() {
                 </Stack>
             </Container>
         </Page >
+
     );
 }

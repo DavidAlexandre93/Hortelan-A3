@@ -9,29 +9,30 @@ import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 import Members from './pages/Members';
 import Iot from './pages/Iot';
-import { Modal, Box } from '@mui/material';
+import { Modal, Box, Button, Backdrop, Fade } from '@mui/material';
 
-const modalStyle = {
+const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  width: 1500,
+  maxHeight: '80vh',
+  overflowY: 'auto',
+  bgcolor: '#daffd3', 
+  border: '2px solid #006400', 
   boxShadow: 24,
   p: 4,
 };
 
+
 export default function Router() {
-  const [openModal, setOpenModal] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-  const handleOpenModal = () => {
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
+  const openModal = () => {
+    handleOpen();
   };
 
   return useRoutes([
@@ -50,14 +51,27 @@ export default function Router() {
       path: '/iot-presentation',
       element: (
         <>
-          {openModal && (
-            <Modal open={openModal} onClose={handleCloseModal} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-              <Box sx={modalStyle}>
-                <Iot />
-              </Box>
-            </Modal>
-          )}
-          {!openModal && <h1 onClick={handleOpenModal}>IOT PRESENTATION</h1>}
+          <Button onClick={openModal}/>
+
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            slots={{ backdrop: Backdrop }}
+            slotProps={{
+              backdrop: {
+                timeout: 500,
+              },
+            }}
+        >   
+          <Fade in={open}>
+            <Box sx={style}>
+              <Iot />
+            </Box>
+          </Fade>
+          </Modal>
         </>
       ),
     },
